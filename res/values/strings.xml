@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Open calendar</string>
+    <string name="app_name">CalendarViewSample</string>
+    
+    <color name="text_color">#31D1F1</color>
+	<color name="white">#ffffff</color>
+	<string name="open">Open</string>
+</resources>
