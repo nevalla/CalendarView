@@ -1,3 +1,19 @@
+/*
+* Copyright 2011 Lauri Nevala.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
 package com.examples.android.calendar;
 
 import java.util.ArrayList;
@@ -47,7 +63,7 @@ public class CalendarAdapter extends BaseAdapter {
         return 0;
     }
 
-    // create a new View for each item referenced by the Adapter
+    // create a new view for each item referenced by the Adapter
     public View getView(int position, View convertView, ViewGroup parent) {
         View v = convertView;
     	TextView dayView;
@@ -103,6 +119,8 @@ public class CalendarAdapter extends BaseAdapter {
     	
     	int lastDay = month.getActualMaximum(Calendar.DAY_OF_MONTH);
         int firstDay = (int)month.get(Calendar.DAY_OF_WEEK);
+        
+        // figure size of the array
         if(firstDay==1){
         	days = new String[lastDay+6];
         }
@@ -111,6 +129,8 @@ public class CalendarAdapter extends BaseAdapter {
         }
         
         int j=0;
+        
+        // populate empty days before first real day
         if(firstDay>1) {
 	        for(j=0;j<firstDay-1;j++) {
 	        	days[j] = "";
@@ -122,6 +142,8 @@ public class CalendarAdapter extends BaseAdapter {
 	        }
 	    	j=7;
 	    }
+        
+        // populate days
         int dayNumber = 1;
         for(int i=j-1;i<days.length;i++) {
         	days[i] = ""+dayNumber;
