@@ -3,4 +3,4 @@ This a sample Android application to show how to implement CalendarView based on
 Getting Started
 ===============
 
-See [the introduction](http://caughtinthemobileweb.wordpress.com/)
+See [the introduction](http://caughtinthemobileweb.wordpress.com/2011/06/20/how-to-implement-calendarview-in-android/)
