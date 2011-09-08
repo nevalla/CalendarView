@@ -43,9 +43,9 @@ public class CalendarView extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.calendar);
-	    onNewIntent(getIntent());
-
 	    month = Calendar.getInstance();
+	    onNewIntent(getIntent());
+	    
 	    items = new ArrayList<String>();
 	    adapter = new CalendarAdapter(this, month);
 	    
