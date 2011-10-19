@@ -31,7 +31,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class CalendarAdapter extends BaseAdapter {
-    private Context mContext;
+	static final int FIRST_DAY_OF_WEEK =0; // Sunday = 0, Monday = 1
+	
+	
+	private Context mContext;
 
     private java.util.Calendar month;
     private Calendar selectedDate;
@@ -122,25 +125,25 @@ public class CalendarAdapter extends BaseAdapter {
         
         // figure size of the array
         if(firstDay==1){
-        	days = new String[lastDay+6];
+        	days = new String[lastDay+(FIRST_DAY_OF_WEEK*6)];
         }
         else {
-        	days = new String[lastDay+firstDay-2];
+        	days = new String[lastDay+firstDay-(FIRST_DAY_OF_WEEK+1)];
         }
         
-        int j=0;
+        int j=FIRST_DAY_OF_WEEK;
         
         // populate empty days before first real day
         if(firstDay>1) {
-	        for(j=0;j<firstDay-1;j++) {
+	        for(j=0;j<firstDay-FIRST_DAY_OF_WEEK;j++) {
 	        	days[j] = "";
 	        }
         }
 	    else {
-	    	for(j=0;j<6;j++) {
+	    	for(j=0;j<FIRST_DAY_OF_WEEK*6;j++) {
 	        	days[j] = "";
 	        }
-	    	j=7;
+	    	j=FIRST_DAY_OF_WEEK*6+1; // sunday => 1, monday => 7
 	    }
         
         // populate days
