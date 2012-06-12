@@ -50,6 +50,11 @@ public class CalendarAdapter extends BaseAdapter {
     }
     
     public void setItems(ArrayList<String> items) {
+    	for(int i = 0;i != items.size();i++){
+    		if(items.get(i).length()==1) {
+    		items.set(i, "0" + items.get(i));
+    		}
+    	}
     	this.items = items;
     }
     
